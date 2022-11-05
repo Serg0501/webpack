@@ -1,6 +1,7 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+//const CleanWebpackPlugin = require('clean-webpack-plugin');
+const {WebpackManifestPlugin} = require('webpack-manifest-plugin');
 
 module.exports = {
     mode: 'development',
@@ -13,7 +14,8 @@ module.exports = {
       new HTMLWebpackPlugin({
           template: './src/index.html',
       }),
-      new CleanWebpackPlugin(),
+      //new CleanWebpackPlugin(),
+      new WebpackManifestPlugin(),
   ],
     module: {
         rules: [
